@@ -1,0 +1,21 @@
+{% extends "food/base.html" %}{% load static %} {% block title %} HomePage {% endblock %} {% block body %}
+<div class="px-4">
+  <h1>Hello!</h1>
+  {% for item in item_list %}
+  <div class="row">
+    <div class="col-md-3">
+      <img src="{{item.img}}" alt="" class="card index-img" />
+    </div>
+    <div class="col-md-4">
+      <h3>{{item.name}}</h3>
+      <h5>{{item.description}}</h5>
+      <h6>${{item.price}}</h6>
+      <h6 style="color: goldenrod">Made by {{item.user_name}}</h6>
+    </div>
+    <div class="col-md-2 py-4">
+      <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
+      <a href="{% url 'food:edit' item.id %}" class="btn btn-danger">Edit</a>
+    </div>
+  </div>
+  {% endfor %} {% endblock %}
+</div>

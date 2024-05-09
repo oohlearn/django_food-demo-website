@@ -1,0 +1,8 @@
+{% extends "food/base.html" %}{% block title %} Porfile {% endblock %} {% block body%}
+<div class="container">
+  <h1>Hello, {{user.username}}</h1>
+  <img src="{{user.profile.image.url}}" alt="" class="card profile-img" />
+  <p>hahaha</p>
+</div>
+
+{% endblock %}
